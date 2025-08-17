@@ -1,0 +1,14 @@
+package com.demo.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.demo.dao.StudentDao;
+
+@Transactional
+@Service
+public class StudentServiceImpl implements StudentService{
+
+	private StudentDao sd;
+	
+}

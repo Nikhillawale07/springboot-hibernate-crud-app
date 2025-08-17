@@ -1,0 +1,4 @@
+spring.application.name=sb3
+
+#database properties
+spring.datasource.drive-class-name=

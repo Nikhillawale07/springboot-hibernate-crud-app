@@ -1,0 +1,44 @@
+package com.demo;
+
+import java.util.Random;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.demo.model.Student;
+import com.demo.service.StudentService;
+
+@SpringBootApplication
+public class App {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(App.class, args);
+		StudentService ss = context.getBean(StudentService.class);
+		 
+		String city[]= {
+				"delhi","pune","mumbai","tatanagar","jamanagar","rajkot","satara","nagpur"
+				,"jaipur","akola","amaravati","nanded","latur","baramati","surat","vapi",
+				"alsad","bharuch","solapur","kokan","Nashik","Kolhapur","Mumbai","Thane",
+				"Satara","Sangli","dhule"
+		};
+		
+		Random r = new Random();
+		for(int i=1;i<=5000;i++)
+		{
+			Student s1= new Student();
+			StringBuilder name = new StringBuilder();
+			for(int j=1;j<=15;j++)
+			{
+				name.append((char)(r.nextInt(26)+65));
+				s1.setName(name.toString());
+				s1.setCity(city[r.nextInt(city.length)]);
+				s1.setPercentage(r.nextDouble()*100);
+				ss.save(s1);
+			}
+			
+		}
+		
+	}
+
+}

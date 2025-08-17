@@ -1,0 +1,64 @@
+package com.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.demo.dao.StudentDao;
+import com.demo.model.Student;
+
+@Transactional
+@Service
+public class StudentServiceImpl implements StudentService{
+
+	@Autowired
+	private StudentDao sd;
+
+	@Override
+	public Student save(Student s) {
+		return sd.save(s);
+	}
+
+	@Override
+	public int deleteById(int id) {
+		return sd.deleteById(id);
+	}
+
+	@Override
+	public Student findById(int id) {
+		return sd.findById(id);
+	}
+
+	@Override
+	public List<Student> findAll() {
+		return sd.findAll();
+	}
+
+	@Override
+	public List<Student> findByName(String name) {
+		return sd.findByName(name);
+	}
+
+	@Override
+	public List<Student> findByCity(String city) {
+		return sd.findByCity(city);
+	}
+
+	@Override
+	public List<Student> findByPercentageGreaterThanEqual(double percentage) {
+		return sd.findByPercentageGreaterThanEqual(percentage);
+	}
+
+	@Override
+	public List<Student> findByPercentageBetween(double low, double high) {
+		return sd.findByPercentageBetween(low, high);
+	}
+
+	@Override
+	public List<Student> findByNotPercentageBetween(double low, double high) {
+	return sd.findByNotPercentageBetween(low, high);
+	}
+	
+}

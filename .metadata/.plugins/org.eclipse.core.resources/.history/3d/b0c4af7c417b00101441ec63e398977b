@@ -1,0 +1,37 @@
+package com.demo.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.demo.model.Student;
+@Repository
+public interface StudentDao extends JpaRepository<Student,Integer>{
+	
+	Student save(Student s);
+	
+	@Query(value="delete from Student where id=?",nativeQuery=true)
+	@Modifying
+	int deleteById(int id);
+	
+	Student findById(int id);
+	
+	List<Student>findAll();
+	
+	List<Student> findByName(String name);
+	
+	List<Student> findByCity(String city);
+	
+	List<Student> findByPercentageGreaterThanEqual(double percentage);
+	
+	List<Student> findByPercentageBetween(double low, double high);
+
+	@Query(value="from Student where percentage not between :a and :b")
+	List<Student> findByPercentageNotBetween(@Param("a") double low, @Param("b") double high);
+	
+	List<Student>findByNameAndCity(String name,String city);
+}

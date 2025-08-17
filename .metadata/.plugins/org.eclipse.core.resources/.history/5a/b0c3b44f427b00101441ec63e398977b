@@ -1,0 +1,21 @@
+package com.demo.service;
+
+import java.util.List;
+
+import com.demo.model.Student;
+
+public interface StudentService {
+	Student save(Student s);
+	int deleteById(int id);
+	Student findById(int id);
+	List<Student>findAll();
+	List<Student> findByName(String name);
+	List<Student> findByCity(String city);
+	List<Student> findByPercentageGreaterThanEqual(double percentage);
+	List<Student> findByPercentageBetween(double low, double high);
+	List<Student> findByPercentageNotBetween(double low, double high);
+	List<Student> findByNameAndCity(String name,String city);
+	List<Student> findByNameOrCity(String name,String city);
+
+	
+}
