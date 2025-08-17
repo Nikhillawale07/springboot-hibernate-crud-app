@@ -20,5 +20,16 @@ The project demonstrates how to perform CRUD operations with a relational databa
 - 🌱 **Spring Boot**  
 - 🌀 **Hibernate ORM**  
 - 🗄️ **MySQL Database**  
-- 📦 **Maven**  
+- 📦 **Maven**
+
+- 
+---
+
+## ⚙️ Setup & Installation  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/Nikhillawale07/springboot-hibernate-crud-app.git
+cd springboot-hibernate-crud-app
+
 
