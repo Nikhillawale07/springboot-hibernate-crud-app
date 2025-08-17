@@ -81,6 +81,4 @@ public class StudentServiceImpl implements StudentService{
 		return sd.findByCityIn(list);
 	}
 
-	
-	
 }
