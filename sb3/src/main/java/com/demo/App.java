@@ -16,6 +16,7 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(App.class, args);
 		StudentService ss = context.getBean(StudentService.class);
+		
 		List<String> cities = new ArrayList();
 		cities.add("delhi");
 		cities.add("solapur");
@@ -25,5 +26,4 @@ public class App {
 			System.out.println(s);
 		}
 	}
-
 }
